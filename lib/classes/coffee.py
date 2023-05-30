@@ -32,7 +32,13 @@ class Coffee:
     
     def num_orders(self):
         return len(self._orders)
+        # total = sum(1 for order in self._orders if order.coffee == self)
+        # return total 
+        # # Micheals solution 
+        
     
     def average_price(self):
         return sum([order.price for order in self._orders]) / len(self._orders)
+        # return sum(order.price for order in self._orders if order.coffee == self) / sum(1 for order in self._orders if order.coffee == self) 
+    # Micheals solution
     # what is prder price 

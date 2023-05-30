@@ -13,14 +13,13 @@ class Customer:
         if isinstance(name, str) and 1 <= len(name) <=15:
             self._name = name
         else:
-            raise Exception
+            raise Exception("Name must be a string")
 
     def orders(self, new_order=None):
         from classes.order import Order
         if new_order and isinstance(new_order, Order):
             self._order.append(new_order)
-        else:
-            raise Exception
+        return self._order 
     
     def coffees(self, new_coffee=None):
         from classes.coffee import Coffee
@@ -28,11 +27,3 @@ class Customer:
             self._coffee.append(new_coffee)
         return self._coffee
     
-    
-    
-    # def create_order(self):
-    #     return len(self._order)
-    
-     
-    # def average_price(self):
-    #     return sum([order.coffee for order in self._coffee]) / len(self._coffee)
